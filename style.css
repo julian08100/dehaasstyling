@@ -184,7 +184,7 @@ em { font-style: italic; }
 .hero__bg {
   position: absolute; inset: 0;
   background:
-    url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80')
+    url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1600&q=80')
     center/cover no-repeat;
   transform: scale(1.05);
   transition: transform 8s ease;
@@ -287,35 +287,12 @@ em { font-style: italic; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
 }
-.about__badge {
-  position: absolute;
-  bottom: -24px; right: -24px;
-  background: var(--gold);
-  color: var(--black);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-.about__badge-number { display: block; font-family: var(--font-head); font-size: 2rem; font-weight: 700; line-height: 1; }
-.about__badge-text   { display: block; font-size: .75rem; font-weight: 600; letter-spacing: .05em; margin-top: 4px; }
 
 .about__text { padding-left: 8px; }
 .about__lead { font-size: 1.15rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; }
 .about__text p { color: var(--gray); margin-bottom: 16px; }
 .about__text .btn { margin-top: 8px; background: var(--black); color: var(--white); }
 .about__text .btn:hover { background: var(--gold); color: var(--black); }
-
-.about__stats {
-  display: flex;
-  gap: 32px;
-  margin: 36px 0 32px;
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.stat__num   { display: block; font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--gold); }
-.stat__label { display: block; font-size: .8rem; color: var(--gray); font-weight: 500; margin-top: 2px; }
 
 /* ════════════════════════════════════════════════
    SERVICES
@@ -397,25 +374,6 @@ em { font-style: italic; }
   transition: letter-spacing .2s;
 }
 .service-card__link:hover { letter-spacing: .05em; }
-
-/* ════════════════════════════════════════════════
-   TESTIMONIALS
-════════════════════════════════════════════════ */
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.testimonial {
-  background: var(--soft);
-  border-radius: var(--radius);
-  padding: 36px 32px;
-  border-left: 3px solid var(--gold);
-}
-.testimonial__stars { color: var(--gold); font-size: 1rem; margin-bottom: 16px; letter-spacing: 2px; }
-.testimonial blockquote { font-size: .95rem; color: var(--gray); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
-.testimonial cite { font-size: .82rem; font-weight: 600; color: var(--black); font-style: normal; }
 
 /* ════════════════════════════════════════════════
    PROCESS
@@ -550,7 +508,7 @@ em { font-style: italic; }
    RESPONSIVE
 ════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .services__grid, .testimonials__grid { grid-template-columns: 1fr 1fr; }
+  .services__grid { grid-template-columns: 1fr 1fr; }
   .process__steps { flex-wrap: wrap; justify-content: center; }
   .process__connector { display: none; }
   .process__step { flex: 0 0 45%; }
@@ -570,7 +528,7 @@ em { font-style: italic; }
   .about__badge { bottom: -16px; right: -8px; }
   .about__stats { gap: 20px; }
 
-  .services__grid, .testimonials__grid { grid-template-columns: 1fr; }
+  .services__grid { grid-template-columns: 1fr; }
 
   .process__step { flex: 0 0 100%; }
 
