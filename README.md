@@ -1,36 +1,60 @@
-# De Haas Styling: website voor Bibi
+# De Haas Styling
 
-Een statische one-pager (`index.html`) in de look en feel van Instagram **@dehaasstyling**: crème, taupe (#685B4D), espresso, warm hout, groen en serif-kapitalen ("DE HAAS | STYLING"). Glazen kaartjes zoals in haar posts.
+Website van **De Haas Styling**, de salon van Bibi de Haas in Empel ('s-Hertogenbosch): huidspecialist, pedicure specialist en nagelstylist.
 
-**Bekijken:** dubbelklik `index.html`, of draai `python3 -m http.server 8765` in deze map en open http://127.0.0.1:8765.
-**Online zetten:** de hele map uploaden. Er is geen build-stap nodig (bijvoorbeeld GitHub Pages, Netlify of TransIP-hosting op dehaasstyling.nl).
+**Live:** https://julian08100.github.io/dehaasstyling/
 
-## Bron (gescraped op 17-11-2026, openbaar profiel, zonder inloggen)
-- `bron/instagram/posts.json`: alle 12 zichtbare posts en reels met de volledige captions
-- `bron/instagram/profiel.json`: bio, highlights en links
-- `bron/mijnsalon-behandelingen.txt`: behandelingen uit https://dehaasstyling.mijnsalon.nl
-- `bron/reels/`: de reels in 1080p (DASH, zonder audio-mux), `bron/instagram/`: foto's
+![De Haas Styling](assets/img/bibi-behandeling.jpg)
 
-`python3 prepare_assets.py` maakt `assets/` (webp/jpg en stille mp4-loops) opnieuw aan uit `bron/`.
+## Over de website
 
-## Wat er op de site staat (alles uit haar eigen posts en bio)
-- Hero met een video van Bibi die een behandeling geeft, plus "−50% op je eerste behandeling" (uit haar post)
-- Over Bibi: haar eigen introtekst (post van 17-08), afgesloten met "Stralende groet, Bibi"
-- 6 behandelingen uit mijnsalon. **Alleen de prijs van Organic Treat (€69,00) is bekend**, uit een post. De rest verwijst naar de agenda.
-- Extra's: deep tissue massage, multi-zuurpeeling (AHA/PHA), natural nail BIAB
-- Het Organic Treat-ritueel: reiniging, peeling/masker, schoudermassage, lichttherapie, naverzorging
-- Skincare: Maria Åkerberg en INIKA Organic, gratis huidadvies, SPF-tip
-- De salon (video-rondleiding), Instagram-grid en contact (mail, bellen, WhatsApp, Instagram)
-- SEO: meta-tags en schema.org BeautySalon. Het boeken loopt via mijnsalon.
+Een snelle, statische one-pager in de stijl van [@dehaasstyling](https://www.instagram.com/dehaasstyling/) op Instagram: warm crème, taupe en espresso, serif-typografie en glazen kaartjes. Alle teksten, foto's en video's komen van Bibi zelf.
 
-## Nog navragen bij Bibi vóór livegang
-1. **Prijzen** van Organic Treat VIP, Clear Skin Treat, Pedicure Basis, BIAB en deep tissue
-2. **Adres.** Nu staat er alleen "Empel · Den Bosch" (locatietag en bio).
-3. **KvK-nummer** en eventueel een privacyverklaring voor de footer
-4. Of Superlash en Natural Tanning (Instagram-highlights) ook als behandeling op de site moeten. De highlights zijn zonder inloggen niet te lezen.
-5. E-mail: de bio noemt info@dehaasstyling.nl en één oude post noemt Info.dehaasstyling@gmail.com. De site gebruikt het .nl-adres.
-6. Domein dehaasstyling.nl bestaat al (DNS → 37.97.254.27), maar geeft nog geen https-site
+De pagina volgt het **AIDA-model**:
 
-## Wijzigingslog
-- 17-11-2026: map nieuw aangemaakt door Claude. Er zijn geen bestaande bestanden gewijzigd. Getest in Chrome op desktop (1440 px) en mobiel (390 px): geen console-fouten en geen horizontale scroll.
-- 17-11-2026: gepubliceerd in github.com/julian08100/dehaasstyling (GitHub Pages: https://julian08100.github.io/dehaasstyling/). De oude site van april 2026 is bewaard als tag `v1-april-2026` (herstel: `git checkout v1-april-2026 -- .`).
+| Fase | Onderdeel |
+|---|---|
+| **Attention** | Hero met video uit de salon, kernbelofte en "−50% op je eerste behandeling" |
+| **Interest** | "Herken je dit?" (vier huidbehoeften), behandelingen met prijzen en het Organic Treat-ritueel |
+| **Desire** | Echte resultaten (BIAB, Superlash voor/na), klantreacties, het verhaal van Bibi, producten en de salon |
+| **Action** | Ingebouwde online agenda (MijnSalon), vaste afspraakknop op mobiel, FAQ en contact |
+
+### Functies
+- Online afspraak maken direct op de pagina (MijnSalon-agenda in een iframe, laadt pas wanneer nodig)
+- Volledig responsive, met een vaste knop "Afspraak maken" op mobiel
+- Geen cookies, geen tracking. Lettertypes worden zelf gehost (Cormorant Garamond en Jost, SIL OFL)
+- Lazy-loaded video's die alleen afspelen als ze in beeld zijn, en ondersteuning voor `prefers-reduced-motion`
+- SEO: meta- en Open Graph-tags en schema.org `BeautySalon`
+- [Privacyverklaring](privacy.html)
+
+## Structuur
+
+```
+index.html          De website
+privacy.html        Privacyverklaring
+assets/
+  img/              Foto's (webp + jpg)
+  video/            Korte, stille video-loops (H.264)
+  fonts/            Zelf gehoste webfonts
+  fonts.css
+bron/               Originele beelden en tekst van Instagram
+prepare_assets.py   Maakt assets/ opnieuw aan uit bron/ (vereist ffmpeg + Pillow)
+```
+
+## Lokaal bekijken
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+## Publiceren
+
+De site draait op GitHub Pages vanaf de `main`-branch. Elke push naar `main` publiceert automatisch. Voor een eigen domein: zet een `CNAME`-bestand met het domein in de root en wijs het domein in DNS naar GitHub Pages.
+
+## Contact
+
+De Haas Styling · Pottenbakker 27, 5236 AL 's-Hertogenbosch · KVK 98882732
+[info@dehaasstyling.nl](mailto:info@dehaasstyling.nl) · 06 10 62 42 70 · [Instagram](https://www.instagram.com/dehaasstyling/) · [Afspraak maken](https://dehaasstyling.mijnsalon.nl)
+
+© 2026 De Haas Styling. Alle foto's, video's en teksten zijn eigendom van De Haas Styling.

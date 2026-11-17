@@ -59,6 +59,24 @@ frame("reel_11_2.mp4", 2.5, "led-masker")
 frame("reel_07_2.mp4", 15.8, "inika-spf", (1080, 1350))
 frame("reel_06_0.mp4", 3.5, "logo-kaartjes", (1080, 1350))
 
+# Uit de Instagram-highlights (bron/highlights, 1080x1919 stories)
+HL = ROOT / "bron/highlights"
+
+
+def story_crop(src: Path, name: str, box, size=(1000, 1250)):
+    im = Image.open(src).convert("RGB").crop(box)
+    tmp = IMG / f"_{name}.png"
+    im.save(tmp)
+    save_img(tmp, name, size)
+    tmp.unlink()
+
+
+story_crop(HL / "transformatie/01.jpg", "nagels-resultaat-1", (0, 380, 1080, 1730))
+story_crop(HL / "transformatie/03.jpg", "nagels-resultaat-2", (0, 240, 1080, 1590))
+story_crop(HL / "nagels-trainingsdag.jpg", "nagels-glitter", (0, 120, 1080, 1470))
+story_crop(HL / "superlash/03.jpg", "superlash-voor-na", (0, 500, 1080, 1430), (1000, 861))
+story_crop(HL / "superlash/00.jpg", "superlash-product", (90, 560, 1050, 1760), (1000, 1250))
+
 # Korte, stille loops
 clip("reel_11_2.mp4", 4.0, 12.0, "hero-behandeling")
 clip("reel_10_2.mp4", 0.0, 8.6, "salon-tour")
