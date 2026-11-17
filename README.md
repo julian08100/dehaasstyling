@@ -20,7 +20,7 @@ De pagina volgt het **AIDA-model**:
 | **Action** | Ingebouwde online agenda (MijnSalon), vaste afspraakknop op mobiel, FAQ en contact |
 
 ### Functies
-- Online afspraak maken direct op de pagina (MijnSalon-agenda in een iframe, laadt pas wanneer nodig)
+- Elke "Afspraak maken"-knop opent de online agenda (MijnSalon) als stijlvolle pop-up, met een knop "Open in nieuw venster"; op mobiel als schuifpaneel van onderen
 - Volledig responsive, met een vaste knop "Afspraak maken" op mobiel
 - Geen cookies, geen tracking. Lettertypes worden zelf gehost (Cormorant Garamond en Jost, SIL OFL)
 - Lazy-loaded video's die alleen afspelen als ze in beeld zijn, en ondersteuning voor `prefers-reduced-motion`
