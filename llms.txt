@@ -24,5 +24,5 @@
 - Maria Åkerberg (organische skincare), INIKA Organic (minerale SPF 50, Organic Tanning Mist), Superlash wimperserum
 
 ## Pagina's
-- [Website](https://julian08100.github.io/dehaasstyling/): alle informatie op één pagina
-- [Privacyverklaring](https://julian08100.github.io/dehaasstyling/privacy.html)
+- [Website](https://dehaasstyling.nl/): alle informatie op één pagina
+- [Privacyverklaring](https://dehaasstyling.nl/privacy.html)

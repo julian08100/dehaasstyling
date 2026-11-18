@@ -19,4 +19,4 @@ User-agent: DuckAssistBot
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://julian08100.github.io/dehaasstyling/sitemap.xml
+Sitemap: https://dehaasstyling.nl/sitemap.xml

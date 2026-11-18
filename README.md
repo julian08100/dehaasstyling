@@ -2,7 +2,7 @@
 
 Website van **De Haas Styling**, de salon van Bibi de Haas in Empel ('s-Hertogenbosch): huidspecialist, pedicure specialist en nagelstylist.
 
-**Live:** https://julian08100.github.io/dehaasstyling/
+**Live:** https://dehaasstyling.nl/
 
 ![De Haas Styling](assets/img/bibi-behandeling.jpg)
 
