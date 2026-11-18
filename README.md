@@ -24,7 +24,8 @@ De pagina volgt het **AIDA-model**:
 - Volledig responsive, met een vaste knop "Afspraak maken" op mobiel
 - Geen cookies, geen tracking. Lettertypes worden zelf gehost (Cormorant Garamond en Jost, SIL OFL)
 - Lazy-loaded video's die alleen afspelen als ze in beeld zijn, en ondersteuning voor `prefers-reduced-motion`
-- SEO: meta- en Open Graph-tags en schema.org `BeautySalon`
+- SEO en bots: canonical, Open Graph/Twitter-kaart (eigen deelafbeelding 1200×630), schema.org-graph (`BeautySalon` met alle behandelingen, `Person`, `FAQPage`, `ReserveAction` naar de agenda), `robots.txt` die ook AI-bots expliciet toelaat, `sitemap.xml` met afbeeldingen, `llms.txt` voor AI-assistenten, favicons + webmanifest en een 404-pagina
+- Alle tekst staat direct in de HTML en is ook zonder JavaScript zichtbaar; afbeeldingen hebben vaste afmetingen (geen verspringende layout)
 - [Privacyverklaring](privacy.html)
 
 ## Structuur
@@ -32,6 +33,9 @@ De pagina volgt het **AIDA-model**:
 ```
 index.html          De website
 privacy.html        Privacyverklaring
+404.html            Pagina niet gevonden
+robots.txt, sitemap.xml, llms.txt, site.webmanifest, favicon.*
+tools/set_domain.py Zet alle URL's om naar een eigen domein en schrijft CNAME
 assets/
   img/              Foto's (webp + jpg)
   video/            Korte, stille video-loops (H.264)
@@ -50,7 +54,7 @@ python3 -m http.server 8000
 
 ## Publiceren
 
-De site draait op GitHub Pages vanaf de `main`-branch. Elke push naar `main` publiceert automatisch. Voor een eigen domein: zet een `CNAME`-bestand met het domein in de root en wijs het domein in DNS naar GitHub Pages.
+De site draait op GitHub Pages vanaf de `main`-branch. Elke push naar `main` publiceert automatisch. Voor een eigen domein: wijs het domein in DNS naar GitHub Pages en draai `python3 tools/set_domain.py dehaasstyling.nl`. Dat zet canonical, Open Graph, schema.org, sitemap, robots en llms.txt om en schrijft het `CNAME`-bestand. Daarna committen, pushen, in GitHub "Enforce HTTPS" aanzetten en de sitemap indienen in Google Search Console en Bing Webmaster Tools.
 
 ## Contact
 

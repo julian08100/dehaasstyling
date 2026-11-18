@@ -1,0 +1,22 @@
+# De Haas Styling — alle zoekmachines en AI-assistenten zijn welkom
+User-agent: *
+Allow: /
+
+# Expliciet welkom: AI-zoek- en antwoordbots
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://julian08100.github.io/dehaasstyling/sitemap.xml
